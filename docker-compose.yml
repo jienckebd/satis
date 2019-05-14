@@ -1,0 +1,19 @@
+version: '2'
+
+volumes:
+  satis:
+
+services:
+  satis:
+    build:
+      context: .
+    hostname: satis.bostondrupal.com
+    ports:
+      - "2222:22"
+      - 83:80
+      - 444:443
+    environment:
+      GIT_USER_NAME: "Bryan Jiencke"
+    working_dir: /var/satis
+    volumes:
+      - satis:/var/satis
