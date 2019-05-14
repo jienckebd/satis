@@ -1,0 +1,14 @@
+{
+  "name": "Boston Drupal: Satis Repo",
+  "homepage": "http://satis.bostondrupal.com",
+  "repositories": [],
+  "require": [],
+  "require-all": false,
+  "require-dependencies": true,
+  "require-dev-dependencies": false,
+  "archive": {
+    "directory": "dist",
+    "format": "tar",
+    "skip-dev": true
+  }
+}

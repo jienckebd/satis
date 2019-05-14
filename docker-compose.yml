@@ -9,9 +9,10 @@ services:
       context: .
     hostname: satis.bostondrupal.com
     ports:
-      - "2222:22"
-      - 83:80
-      - 444:443
+      - 0:22
+      - 0:80
+      - 0:443
+      - 9010:9010
     environment:
       GIT_USER_NAME: "Bryan Jiencke"
     working_dir: /var/satis
