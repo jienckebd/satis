@@ -46,7 +46,7 @@ RUN locale-gen en_US.UTF-8 en_GB.UTF-8 de_DE.UTF-8 es_ES.UTF-8 fr_FR.UTF-8 it_IT
 
 # Configure PHP for TYPO3
 # Configure apache for TYPO3
-RUN a2enmod rewrite expires ssl
+RUN a2enmod rewrite expires
 
 WORKDIR /var/www
 
