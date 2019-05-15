@@ -1,5 +1,5 @@
 {
-  "host": "http://satis.bostondrupal.com",
+  "host": "https://satis.bostondrupal.com",
   "port": 9010,
   "lock_file": "storage/app/satislock.json",
   "SSLCertificateKeyFile": "",
