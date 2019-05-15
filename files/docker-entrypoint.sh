@@ -1,5 +1,6 @@
 #!/bin/bash
 
-cd /var/satis
+service cron start
+cd /var/www/satis
 npm run server &
-/start.sh
+/usr/sbin/apache2ctl -D FOREGROUND

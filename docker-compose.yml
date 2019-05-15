@@ -7,14 +7,13 @@ services:
   satis:
     build:
       context: .
-    hostname: satis.bostondrupal.com
+    hostname: local.satis.bostondrupal.com
     ports:
-      - 0:22
-      - 0:80
+      - 8080:80
       - 0:443
       - 9010:9010
     environment:
       GIT_USER_NAME: "Bryan Jiencke"
-    working_dir: /var/satis
-    volumes:
-      - satis:/var/satis
+    working_dir: /var/www/satis
+#    volumes:
+#      - satis:/var/www/satis

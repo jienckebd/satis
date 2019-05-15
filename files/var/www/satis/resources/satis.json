@@ -1,9 +1,18 @@
 {
   "name": "Boston Drupal: Satis Repo",
   "homepage": "http://satis.bostondrupal.com",
-  "repositories": [],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/jienckebd/entity_index_field.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/jienckebd/entity_serialized_field.git"
+    }
+  ],
   "require": [],
-  "require-all": false,
+  "require-all": true,
   "require-dependencies": true,
   "require-dev-dependencies": false,
   "archive": {
