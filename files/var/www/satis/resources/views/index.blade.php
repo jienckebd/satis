@@ -16,7 +16,7 @@
     <script src="/control-panel/js/jquery.min.js"></script>
     <script src="/control-panel/js/bootstrap.min.js"></script>
 
-    <script src="https://satis.bostondrupal.com:9010/socket.io/socket.io.js"></script>
+    <script src="{!! $nodeServer !!}/socket.io/socket.io.js"></script>
 
     <script type="text/javascript">
       var Satis = {!! $satis !!};
