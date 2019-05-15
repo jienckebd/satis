@@ -10,7 +10,6 @@ services:
     hostname: local.satis.bostondrupal.com
     ports:
       - 8080:80
-      - 0:443
       - 9010:9010
     environment:
       GIT_USER_NAME: "Bryan Jiencke"

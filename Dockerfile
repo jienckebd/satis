@@ -46,13 +46,13 @@ RUN locale-gen en_US.UTF-8 en_GB.UTF-8 de_DE.UTF-8 es_ES.UTF-8 fr_FR.UTF-8 it_IT
 
 # Configure PHP for TYPO3
 # Configure apache for TYPO3
-RUN a2enmod rewrite expires
+RUN a2enmod rewrite expires ssl
 
 WORKDIR /var/www
 
 # Install dependencies.
 RUN apt-get update -y
-RUN apt-get install npm cron -y
+RUN apt-get install npm cron lsof vim -y
 
 # Install satis-control-panel
 RUN composer create-project realshadow/satis-control-panel satis
@@ -80,7 +80,7 @@ RUN update-rc.d cron enable
 # Add cron job.
 RUN (crontab -l 2>/dev/null; echo "0 */3 * * * php /var/www/satis/artisan schedule:run >> /dev/null 2>&1") | crontab -
 
-EXPOSE 80 443
+EXPOSE 80
 EXPOSE 9010
 
 # VOLUME /var/www/satis
