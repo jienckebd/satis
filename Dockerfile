@@ -60,6 +60,9 @@ RUN composer create-project realshadow/satis-control-panel satis
 COPY files/docker-entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
+COPY files/swap-verify.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/swap-verify.sh
+
 # Copy required nginx files.
 COPY files/etc /etc
 
@@ -70,6 +73,7 @@ COPY files/var/www/satis /var/www/satis
 
 RUN chmod -R ug+rwx bootstrap/cache storage public/private public/public
 RUN chmod ug+rwx resources/satis.json
+RUN chmod 755 public/private/rebuild.php
 
 RUN chown -R www-data:www-data /var/www/satis
 
@@ -78,7 +82,7 @@ RUN update-rc.d cron defaults
 RUN update-rc.d cron enable
 
 # Add cron job.
-RUN (crontab -l 2>/dev/null; echo "0 */3 * * * php /var/www/satis/artisan schedule:run >> /dev/null 2>&1") | crontab -
+RUN (crontab -l 2>/dev/null; echo "0 */12 * * * php /var/www/satis/artisan schedule:run >> /dev/null 2>&1") | crontab -
 
 EXPOSE 80
 EXPOSE 9010
