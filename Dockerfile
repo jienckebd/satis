@@ -82,7 +82,7 @@ RUN update-rc.d cron defaults
 RUN update-rc.d cron enable
 
 # Add cron job.
-RUN (crontab -l 2>/dev/null; echo "0 */12 * * * php /var/www/satis/artisan schedule:run >> /dev/null 2>&1") | crontab -
+RUN (crontab -l 2>/dev/null; echo "0 2 * * * php /var/www/satis/artisan schedule:run >> /dev/null 2>&1") | crontab -
 
 EXPOSE 80
 EXPOSE 9010

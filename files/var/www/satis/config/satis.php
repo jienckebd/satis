@@ -12,7 +12,7 @@ return [
   // See https://www.selenic.com/mercurial/hg.1.html#environment-variables for how HGRCPATH can be set/used
   'hgrc_path' => env('HGRC_PATH', null),
 
-  'memory_limit' => '3G',
+  'memory_limit' => '6G',
   'build_verbosity' => 'vvv',
 
   'private_repository' => 'private',
